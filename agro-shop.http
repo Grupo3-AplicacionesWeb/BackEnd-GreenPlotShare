@@ -1,0 +1,6 @@
+@agro_shop_HostAddress = http://localhost:5113
+
+GET {{agro_shop_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
