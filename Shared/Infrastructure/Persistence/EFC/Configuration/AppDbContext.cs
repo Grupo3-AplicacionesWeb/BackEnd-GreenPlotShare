@@ -1,6 +1,7 @@
 ﻿using agro_shop.Iam.Domain.Model.Aggregates;
 using agro_shop.Iam.Domain.Model.Entities;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
+using LandManagement.Domain.Model.Aggregates;
 using Microsoft.EntityFrameworkCore;
 
 namespace agro_shop.Shared.Infrastructure.Persistence.EFC.Configuration;
@@ -55,6 +56,36 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
             entity.HasOne(ur => ur.Role)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
+        });
+
+        // Configuración de Terrenos
+        builder.Entity<Land>(entity =>
+        {
+            entity.HasKey(l => l.Id);
+            entity.Property(l => l.Id).IsRequired().ValueGeneratedOnAdd();
+
+            entity.OwnsOne(l => l.Location, location =>
+            {
+                location.Property(l => l.Latitude).HasColumnName("Latitude");
+                location.Property(l => l.Longitude).HasColumnName("Longitude");
+                location.Property(l => l.Address).HasColumnName("Address");
+                location.Property(l => l.City).HasColumnName("City");
+                location.Property(l => l.State).HasColumnName("State");
+                location.Property(l => l.PostalCode).HasColumnName("PostalCode");
+            });
+
+            entity.OwnsOne(l => l.Price, price =>
+            {
+                price.Property(p => p.Amount).HasColumnName("Amount");
+                price.Property(p => p.Currency).HasColumnName("Currency");
+            });
+
+            entity.OwnsOne(l => l.Features, features =>
+            {
+                features.Property(f => f.Size).HasColumnName("Size");
+                features.Property(f => f.SoilType).HasColumnName("SoilType");
+                features.Property(f => f.Irrigation).HasColumnName("Irrigation");
+            });
         });
     }
 }
