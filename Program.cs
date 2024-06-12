@@ -1,3 +1,5 @@
+using agro_shop.Iam.Domain.Repositories;
+using agro_shop.Iam.Infrastructure.Persistence.EFC.Repository;
 using agro_shop.Shared.Domain.Repositories;
 using agro_shop.Shared.Infrastructure.Persistence.EFC.Configuration;
 using agro_shop.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -60,6 +62,10 @@ builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
 // Shared Bounded Context Injection Configuration
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Iam Bounded Context Injection Configuration
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 var app = builder.Build();
 
