@@ -1,3 +1,7 @@
+using agro_shop.Lands.Application.Internal.CommandServices;
+using agro_shop.Lands.Domain.Repositories;
+using agro_shop.Lands.Domain.Services;
+using agro_shop.Lands.Infrastructure.Persistence.EFC.Repositories;
 using agro_shop.Shared.Domain.Repositories;
 using agro_shop.Shared.Infrastructure.Persistence.EFC.Configuration;
 using agro_shop.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -28,7 +32,10 @@ builder.Services.AddDbContext<AppDbContext>(
                     .LogTo(Console.WriteLine, LogLevel.Error)
                     .EnableDetailedErrors();    
     });
+//Register repositories and services for terreno
 
+builder.Services.AddScoped<ITerrenoRepository,TerrenoRepository>();
+builder.Services.AddScoped<ITerrenoService, TerrenoService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -68,6 +75,7 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var context = services.GetRequiredService<AppDbContext>();
+    context.Database.EnsureDeleted();
     context.Database.EnsureCreated();
 }
 

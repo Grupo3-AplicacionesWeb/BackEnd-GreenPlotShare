@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cursos\\App Web\\nuevo4\\agro-shop\\agro-shop\\agro-shop.csproj": {}
+    "C:\\Users\\51924\\Desktop\\BackEnd-GreenPlotShare\\agro-shop.csproj": {}
   },
   "projects": {
-    "D:\\Cursos\\App Web\\nuevo4\\agro-shop\\agro-shop\\agro-shop.csproj": {
+    "C:\\Users\\51924\\Desktop\\BackEnd-GreenPlotShare\\agro-shop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cursos\\App Web\\nuevo4\\agro-shop\\agro-shop\\agro-shop.csproj",
+        "projectUniqueName": "C:\\Users\\51924\\Desktop\\BackEnd-GreenPlotShare\\agro-shop.csproj",
         "projectName": "agro-shop",
-        "projectPath": "D:\\Cursos\\App Web\\nuevo4\\agro-shop\\agro-shop\\agro-shop.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Cursos\\App Web\\nuevo4\\agro-shop\\agro-shop\\obj\\",
+        "projectPath": "C:\\Users\\51924\\Desktop\\BackEnd-GreenPlotShare\\agro-shop.csproj",
+        "packagesPath": "C:\\Users\\51924\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\51924\\Desktop\\BackEnd-GreenPlotShare\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\51924\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -23,6 +23,13 @@
       <Folder Include="Iam\Application\" />
       <Folder Include="Iam\Infrastructure\" />
       <Folder Include="Iam\Services\" />
+      <Folder Include="Lands\Application\Internal\QueryServices\" />
+      <Folder Include="Lands\Domain\Model\Commands\" />
+      <Folder Include="Lands\Domain\Model\Queries\" />
+      <Folder Include="Lands\Domain\Model\ValueObjects\" />
+      <Folder Include="Lands\Interfaces\ACL\Services\" />
+      <Folder Include="Lands\Interfaces\REST\Resources\" />
+      <Folder Include="Lands\Interfaces\REST\Transform\" />
       <Folder Include="Shared\Infrastructure\Persistence\EFC\Configuration\Extensions\" />
       <Folder Include="Shopping\Application\" />
       <Folder Include="Shopping\Domain\Services\" />

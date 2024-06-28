@@ -1,5 +1,6 @@
 ﻿using agro_shop.Iam.Domain.Model.Aggregates;
 using agro_shop.Iam.Domain.Model.Entities;
+using agro_shop.Lands.Domain.Model.Aggregates;
 using EntityFrameworkCore.CreatedUpdatedDate.Extensions;
 using Microsoft.EntityFrameworkCore;
 
@@ -56,5 +57,16 @@ public class AppDbContext(DbContextOptions options) : DbContext(options)
                 .WithMany(r => r.UserRoles)
                 .HasForeignKey(ur => ur.RoleId);
         });
+        
+        // Configuración de la entidad Terreno
+        builder.Entity<Terreno>(entity =>
+        {
+            entity.HasKey(t => t.Id);
+            entity.Property(t => t.Id).IsRequired().ValueGeneratedOnAdd();
+            entity.Property(t => t.Nombre).IsRequired().HasMaxLength(100);
+            entity.Property(t => t.Area).IsRequired();
+            entity.Property(t => t.Ubicacion).IsRequired().HasMaxLength(200);
+        });
+
     }
 }
